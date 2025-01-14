@@ -4,7 +4,7 @@ A simple API designed for testing erroneous backend requests. With this API, you
 a parameterized request to the endpoint and receive a response with the specified HTTP
 status code.
 
-Try it: https://error-testing-api.onrender.com/api/status/418
+Try it: https://error-testing-api.onrender.com/status/418
 
 ## Features
 
@@ -48,7 +48,7 @@ Try it: https://error-testing-api.onrender.com/api/status/418
 #### 1. GET request with query parameters
 
 ```bash
-curl -X GET "https://error-testing-api.onrender.com/api/status/404?reason=not_found"
+curl -X GET "https://error-testing-api.onrender.com/status/404?reason=not_found"
 ```
 
 **Response:**
@@ -61,7 +61,7 @@ Body: {"reason": "not_found"}
 #### 2. POST request with a JSON body
 
 ```bash
-curl -X POST https://error-testing-api.onrender.com/api/status/500 \
+curl -X POST https://error-testing-api.onrender.com/status/500 \
   -H "Content-Type: application/json" \
   -d '{"error": "Something went wrong"}'
 ```
@@ -76,7 +76,7 @@ Body: {"error": "Something went wrong"}
 #### 3. PUT request without a body
 
 ```bash
-curl -X PUT https://error-testing-api.onrender.com/api/status/403
+curl -X PUT https://error-testing-api.onrender.com/status/403
 ```
 
 **Response:**
@@ -126,7 +126,7 @@ Use tools like [Postman](https://www.postman.com/) or `curl` to send requests to
 local server:
 
 ```bash
-curl -X GET http://localhost:3000/api/status/401
+curl -X GET http://localhost:3000/status/401
 ```
 
 **Response:**
@@ -167,7 +167,7 @@ use a different port, follow the instructions below:
 
 4. Test the API:
    ```bash
-   curl -X GET http://localhost:<your-port>/api/status/400
+   curl -X GET http://localhost:<your-port>/status/400
    ```
 
 ### Stopping the Container

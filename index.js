@@ -12,7 +12,7 @@ app.use(express.json());
  * The only endpoint **
  ********************* */
 
-app.route('/:statusCode').all((req, res) => {
+app.route('/status/:statusCode').all((req, res) => {
   const { statusCode } = req.params;
   if (!statusCode) return res.status(400).send('Wrong status code');
   const numStatusCode = parseInt(statusCode, 10);
