@@ -4,6 +4,8 @@ A simple API designed for testing erroneous backend requests. With this API, you
 a parameterized request to the endpoint and receive a response with the specified HTTP
 status code.
 
+Try it: https://error-testing-api.onrender.com/api/status/418
+
 ## Features
 
 - Returns a response with the specified HTTP status code.
@@ -18,7 +20,7 @@ status code.
 
 ## Endpoints
 
-### `GET/POST/PUT/DELETE/PATCH https://test-error.com/api/status/:statusCode`
+### `GET/POST/PUT/DELETE/PATCH`
 
 #### Parameters
 
@@ -46,7 +48,7 @@ status code.
 #### 1. GET request with query parameters
 
 ```bash
-curl -X GET "https://test-error.com/api/status/404?reason=not_found"
+curl -X GET "https://error-testing-api.onrender.com/api/status/404?reason=not_found"
 ```
 
 **Response:**
@@ -59,7 +61,7 @@ Body: {"reason": "not_found"}
 #### 2. POST request with a JSON body
 
 ```bash
-curl -X POST https://test-error.com/api/status/500 \
+curl -X POST https://error-testing-api.onrender.com/api/status/500 \
   -H "Content-Type: application/json" \
   -d '{"error": "Something went wrong"}'
 ```
@@ -74,7 +76,7 @@ Body: {"error": "Something went wrong"}
 #### 3. PUT request without a body
 
 ```bash
-curl -X PUT https://test-error.com/api/status/403
+curl -X PUT https://error-testing-api.onrender.com/api/status/403
 ```
 
 **Response:**
