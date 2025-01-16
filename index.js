@@ -5,13 +5,28 @@ require('dotenv').config();
 const app = express();
 
 app.use(morgan('dev'));
-app.use(cors());
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      callback(null, origin);
+    },
+    credentials: true,
+  }),
+);
 app.use(express.json());
 
 /** *******************
  * The only endpoint **
  ********************* */
-
+app.options(
+  '*',
+  cors({
+    origin: (origin, callback) => {
+      callback(null, origin);
+    },
+    credentials: true,
+  }),
+);
 app.route('/status/:statusCode').all((req, res) => {
   const { statusCode } = req.params;
   if (!statusCode) return res.status(400).send('Wrong status code');
